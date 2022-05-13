@@ -1,12 +1,15 @@
 import { StyleSheet } from 'react-native';
+import { useTailwind } from 'tailwind-rn';
 
 import { Text, View } from '../components/Themed';
-import { RootStackScreenProps } from '../types';
 
-export function HomeScreen({ navigation }: RootStackScreenProps<'home'>) {
+export function HomeScreen() {
+  const tailwind = useTailwind();
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Home</Text>
+    <View style={[styles.container]}>
+      <Text style={tailwind('text-blue-500 dark:text-blue-dark-500')}>
+        Home
+      </Text>
     </View>
   );
 }
